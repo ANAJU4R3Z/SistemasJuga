@@ -9,6 +9,42 @@
 
 /*body header div nav ol li a  */
 
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('fonts/icomoon.eot?6i4vwh');
+    src:  url('fonts/icomoon.eot?6i4vwh#iefix') format('embedded-opentype'),
+      url('fonts/icomoon.ttf?6i4vwh') format('truetype'),
+      url('fonts/icomoon.woff?6i4vwh') format('woff'),
+      url('fonts/icomoon.svg?6i4vwh#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-menu:before {
+    content: "\e900";
+  }
+
+
+
+
+
 body{
     font-family: 'Source Sans Pro',sans-serif;
     margin: 0px;
@@ -28,7 +64,8 @@ h6{
 .hero{
     height: 300px;
     /*background-image: url('ana.jpg'); */
-    background-color: #1b2127;
+     background-color: #1b2127;
+    
     /*background-size: 300px 400px; */
     /*background-repeat: no-repeat;
     background-position-x: right; */
@@ -104,7 +141,7 @@ h1{
     font-size: 40px;
     line-height: 1.5em;
     letter-spacing: -.2px;
-    color: white;
+    color: blue;
     margin: 0;
     /*margin: 100px 150 px 70px 30px; */
     /*text-transform: uppercase;
@@ -136,7 +173,8 @@ h2{
     max-width: 100%;
 }
 .header{
-    background-color: #1b2127;
+    background-color: #15B488;
+    /*background-color: #1b2127;*/
     color: white;
     display: flex;
     height: 70px;
@@ -331,11 +369,63 @@ figure{
     flex-wrap: inherit;
 }
 
+.burger-button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .8);
+    display: none;
+    line-height: 40px;
+    text-align: center;
+    position: fixed;
+    z-index: 4;
+    left: 5px;
+    top: 5px;
+    color: white;
+}
+
 @media screen and (max-width: 1024px){
+    .container{
+        padding: 0 1em;
+    }
   
+    .hero{
+        height: auto;
+        position: relative;
+        overflow: hidden;
+        padding: 2em;
+    }
+
+    .hero-image{
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    h1{
+        font-size: 2em;
+        z-index: 2;
+    }
+}
+
+.html-video{
+    
+    max-width:100%;
+    height: auto;
 }
 
 @media screen and (max-width: 768px){
+
+   .burger-button{
+       display: block;
+       
+   }
+
+
     .header{
         display: block;
         height: auto;
@@ -348,9 +438,32 @@ figure{
     }
     .header a{
         justify-content: center;
+        height: 40px;
+        font-size: 2em;
+        text-decoration: underline;
+        margin-bottom: .5em;
     }
     .header .logo{
         text-align: center;
+    }
+
+    .menu{
+        position: fixed;
+        background: rgba(76, 91, 219, .9);
+        z-index: 3;
+        top: 0;
+        left: -100vw;
+        width: 100vw;
+       /* height: 100vh;*/
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 3s;
+    }
+
+    .menu.is-active {
+        left:0;
     }
 
     .project{
@@ -371,8 +484,13 @@ figure{
         font-size: 16px;
     }
 
+    .Project-course, .Project-date, .Project-url{
+        margin: 0.3em 0;
+    }
+
     .Project-title{
         font-size: 1.5em;
+        margin-bottom: 3em;
     }
 
     .Project-url{
@@ -389,18 +507,67 @@ figure{
     .Project-description{
         font-size: .8em;
     }
+
+    .event{
+        width: auto;
+        flex-shrink: initial;
+    }
+    .event img{
+        width: 100%;
+    }
 }
 
 
 
 @media screen and (max-width: 480px){
+h1{
+    font-size: 1.5em;
+}
+
     .project-details{
         width: auto;
         font-size: 12px;
     }
+
+    .event-details{
+        margin:-2em .5em .5em;
+        padding: 1em;
+    }
+
+    .contact{
+        height: auto;
+        padding: 1.5em 0;
+        text-align: center;
+        display: block;
+    }
+
+    .form-email button{
+        margin:1em auto;
+    }
+
+    .form-email h3{
+        margin-top: 0;
+    }
+
+    .footer{
+        display: block;
+        text-align: center;
+        border: 1px solid transparent;
+    }
+
 }
 
 
 @media screen and (max-width: 320px){
+    h1{
+        font-size: 1.2em;
+        background: rgba(0,0,0,.5);
+    }
   
+    .hero{
+        padding: 2em 1em;
+    }
 }
+
+
+  
